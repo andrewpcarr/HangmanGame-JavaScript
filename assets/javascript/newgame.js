@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+	var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   var showLives = $('#myLives');
 
-    // Creates letter buttons
+  	// Creates letter buttons
     var buttons = function() {  
       for (var i = 0; i < alphabet.length; i++) {
         var letterBtn = $("<button>");
@@ -32,15 +32,15 @@ $(document).ready(function() {
 
     // Guesses remaining
     var comments = function() {
-    showLives.html('You have ' + lives + " guesses remaining.");
-    if (lives < 1) {
-      showLives.html('Game Over');
-    }
-    for (var i = 0; i < guesses.length; i++) {
-      if (counter + space === guesses.length) {
-        showLives.html('You Win!');
-    }
-  }
+		showLives.html('You have ' + lives + " guesses remaining.");
+		if (lives < 1) {
+			showLives.html('Game Over');
+		}
+		for (var i = 0; i < guesses.length; i++) {
+			if (counter + space === guesses.length) {
+				showLives.html('You Win!');
+		}
+	}
 }
 
     // Creates dashes for secret word
@@ -92,18 +92,18 @@ $(document).ready(function() {
 
     // Actual game logic
     var play = function() {
-      words = ["fados", "moontower", "haymaker", "dogwood", "highball", "lalas"];
-      chosenWord = words[Math.floor(Math.random() * words.length)];
-      chosenWord = chosenWord.replace(/\s/g, "-");
-      console.log(chosenWord);
-      buttons();
+    	words = ["fados", "moontower", "haymaker", "dogwood", "highball", "lalas"];
+    	chosenWord = words[Math.floor(Math.random() * words.length)];
+    	chosenWord = chosenWord.replace(/\s/g, "-");
+    	console.log(chosenWord);
+    	buttons();
 
-      guesses = [];
-      lives = 10;
-      counter = 0;
-      space = 0;
-      result();
-      comments();
+    	guesses = [];
+    	lives = 10;
+    	counter = 0;
+    	space = 0;
+    	result();
+    	comments();
 
 
     }
@@ -111,8 +111,11 @@ $(document).ready(function() {
 
     // Play Again button reset
     $('#reset').on('click', function() {
-      correct.remove();
-      play();
+    	correct.remove();
+    	play();
     });
+
+
+
 
 });

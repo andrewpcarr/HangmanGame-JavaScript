@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title>jQuery Hangman!</title>
+  
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/newstyle.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  
+  
 </head>
 <body>
-
+  <div class="jumbotron text-center">
+    <div style="background-color: #ffcd16">
+      <h1>HANGMAN</h1>
+      <h2>Bars in Austin</h2>
+      <p>Use the letters below to guess the word.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <img src="assets/images/beer.jpg">
+      </div>
+      <div class="col-md-7">
+        <h1>Guess this bar!</h1>
+        <br>
+        <div id="hold"></div>
+        <br>
+        <h1>Guesses remaining:</h1>
+        <br>
+        <div id="myLives" style="font-size: 24px"></div>
+        <br>
+        <div></div>
+        <div id="buttons"></div>
+        <br>
+        <button type="button" class="btn btn-warning" id="reset">Play Again!</button>
+      </div>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="assets/javascript/newgame.js"></script>
 </body>
 </html>
