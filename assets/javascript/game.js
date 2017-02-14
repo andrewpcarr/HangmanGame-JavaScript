@@ -27,10 +27,6 @@ $(document).ready(function() {
       
         $("#buttons").append(letterBtn);
 
-        $('#buttons').on('click', function() {
-
-
-        })
 
         }
     }
@@ -93,15 +89,16 @@ $(document).ready(function() {
     }
     play();
 
-    
 
-    $('#buttons').on('click', function() {
-
-    })
+    // Click function for user guesses
+    $('.letter').on('click', function() {
+          $(this).css('color', 'red');
+        })
 
     // Play Again button reset
     $('#reset').on('click', function() {
       correct.remove();
+      $('.letter').css('color', 'black');
       play();
     });
 
