@@ -27,8 +27,14 @@ $(document).ready(function() {
       
         $("#buttons").append(letterBtn);
 
+        $('#buttons').on('click', function() {
+
+
+        })
+
         }
     }
+    buttons();
 
     // Guesses remaining
     var comments = function() {
@@ -66,37 +72,15 @@ $(document).ready(function() {
   }
 
 
-  $()
-  var check = function () {
-    list.onclick = function () {
-      var guess = (this.innerHTML);
-      this.setAttribute("class", "active");
-      this.onclick = null;
-      for (var i = 0; i < chosenWord.length; i++) {
-        if (chosenWord[i] === guess) {
-          guesses[i].innerHTML = guess;
-          counter += 1;
-        } 
-      }
-      var wrong = $(chosenWord[i]);
-      if (wrong === -1) {
-        lives -= 1;
-        comments();
-      } else {
-        comments();
-      }
-    }
-  }
   
 
 
-    // Actual game logic
+    // Random word is chosen and is displayed as dashes on the screen
     var play = function() {
       words = ["fados", "moontower", "haymaker", "dogwood", "highball", "lalas"];
       chosenWord = words[Math.floor(Math.random() * words.length)];
       chosenWord = chosenWord.replace(/\s/g, "-");
       console.log(chosenWord);
-      buttons();
 
       guesses = [];
       lives = 10;
@@ -108,6 +92,12 @@ $(document).ready(function() {
 
     }
     play();
+
+    
+
+    $('#buttons').on('click', function() {
+
+    })
 
     // Play Again button reset
     $('#reset').on('click', function() {
