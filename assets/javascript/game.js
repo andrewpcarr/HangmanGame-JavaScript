@@ -36,13 +36,9 @@ $(document).ready(function() {
     var comments = function() {
     showLives.html('You have ' + lives + " guesses remaining.");
     if (lives < 1) {
-      showLives.html('Game Over');
+      showLives.html('You Lose!');
     }
-    for (var i = 0; i < guesses.length; i++) {
-      if (counter + space === guesses.length) {
-        showLives.html('You Win!');
-    }
-  }
+    
 }
 
     // Creates dashes for secret word
@@ -98,8 +94,10 @@ $(document).ready(function() {
           for (var i = 0, len = chosenWord.length; i < len; i++) {
             if (chosenWord[i] === press) {
               console.log(press);
+              $('.guess').text(chosenWord[i]);
               minus = 100;
             } else {
+
               minus--;
             }
           }
