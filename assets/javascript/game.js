@@ -93,13 +93,19 @@ $(document).ready(function() {
     // Click function for user guesses
     $('.letter').click(function() {
           var press = $(this).text();
+          var minus = 0;
           $(this).css('color', 'red');
           for (var i = 0, len = chosenWord.length; i < len; i++) {
             if (chosenWord[i] === press) {
-              console.log('yes');
+              console.log(press);
+              minus = 100;
+            } else {
+              minus--;
             }
-              
-            
+          }
+          if (minus < 0) {
+            lives--;
+            comments();
           }
         })
 
