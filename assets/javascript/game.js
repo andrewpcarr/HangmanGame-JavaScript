@@ -91,12 +91,23 @@ $(document).ready(function() {
 
 
     // Click function for user guesses
-    $('.letter').on('click', function() {
+    $('.letter').click(function() {
+          var press = $(this).text();
           $(this).css('color', 'red');
+          for (var i = 0, len = chosenWord.length; i < len; i++) {
+            if (chosenWord[i] === press) {
+              console.log('yes');
+            }
+              
+            
+          }
         })
 
+
+
+
     // Play Again button reset
-    $('#reset').on('click', function() {
+    $('#reset').click(function() {
       correct.remove();
       $('.letter').css('color', 'black');
       play();
