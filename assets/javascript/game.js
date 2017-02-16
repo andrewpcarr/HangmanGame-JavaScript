@@ -11,6 +11,7 @@ $(document).ready(function() {
   var lives;              // Lives
   var counter;            // Count correct guesses
   var space;              // Number of spaces in word '-'
+  var winLength = 0;      // Counter to determine if you've won
 
   var showLives = $('#myLives');
 
@@ -70,11 +71,9 @@ $(document).ready(function() {
 
 
   
-
-
     // Random word is chosen and is displayed as dashes on the screen
     var play = function() {
-      words = ["fados", "moontower", "haymaker", "dogwood", "highball", "lalas"];
+      words = ["fados", "moontower", "haymaker", "dogwood", "highball", "lalas", "handlebar", "whislers", "barbarella", "blackheart", "javelina"];
       chosenWord = words[Math.floor(Math.random() * words.length)];
       chosenWord = chosenWord.replace(/\s/g, "-");
       console.log(chosenWord);
@@ -83,12 +82,14 @@ $(document).ready(function() {
       lives = 10;
       counter = 0;
       space = 0;
+      winLength = 0;
       result();
       comments();
 
 
     }
     play();
+
 
 
     // Click function for user guesses
@@ -101,6 +102,10 @@ $(document).ready(function() {
               console.log(press);
               $('#guess'+i).text(chosenWord[i]);
               minus = 100;
+              winLength++;
+              if (winLength === chosenWord.length) {
+                alert('You Win! Great job, ya drunkard!');
+              }
             } else {
               minus--;
             }
@@ -109,6 +114,7 @@ $(document).ready(function() {
             lives--;
             comments();
           }
+          console.log(winLength);
         })
 
 
