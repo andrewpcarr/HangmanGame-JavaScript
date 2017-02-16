@@ -38,7 +38,11 @@ $(document).ready(function() {
     if (lives < 1) {
       showLives.html('You Lose!');
     }
-    
+    for (var i = 0; i < guesses.length; i++) {
+      if (counter + space === guesses.length) {
+        showLives.html('You Win!');
+    }
+  }
 }
 
     // Creates dashes for secret word
@@ -50,6 +54,7 @@ $(document).ready(function() {
       correct.setAttribute('id', 'my-word');
       guess = document.createElement('li');
       guess.setAttribute('class', 'guess');
+      guess.setAttribute('id', 'guess'+i);
       if (chosenWord[i] === "-") {
         guess.innerHTML = "-";
         space = 1;
@@ -94,10 +99,9 @@ $(document).ready(function() {
           for (var i = 0, len = chosenWord.length; i < len; i++) {
             if (chosenWord[i] === press) {
               console.log(press);
-              $('.guess').text(chosenWord[i]);
+              $('#guess'+i).text(chosenWord[i]);
               minus = 100;
             } else {
-
               minus--;
             }
           }
