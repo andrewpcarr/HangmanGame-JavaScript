@@ -1,3 +1,7 @@
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
 .jumbotron {
   background-image: url("../images/bar.jpg");
   background-size: cover;
@@ -5,8 +9,37 @@
   font-weight: bolder;
 }
 
+.intro {
+	background-color: rgba(255,205,22, .9);
+	color: rgba(255, 255, 255, 1);
+}
+
+#title {
+	margin-top: 20px;
+}
+
+#text {
+	margin-bottom: 20px;
+}
+
 .guess {
   display: inline;
   list-style-type: none;
   padding-right: 20px;
+}
+
+.letter {
+	margin: 5px;
+	padding: 5px;
+	font-size: 16px;
+	height: 40px;
+	width: 40px;
+}
+
+.letter:hover {
+	background-color: #FFCD16;
+}
+
+.btn {
+	margin-bottom: 100px;
 }

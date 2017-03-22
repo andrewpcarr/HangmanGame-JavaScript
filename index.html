@@ -3,34 +3,38 @@
 <head>
   <title>jQuery Hangman!</title>
   
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <!-- Bootstrap link -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+  <!-- CSS link -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+  <!-- jQuery link -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  
-  
+   
 </head>
 <body>
+  <!-- Intro screen -->
   <div class="jumbotron text-center">
-    <div style="background-color: #ffcd16">
-      <h1>HANGMAN</h1>
+    <div class="intro">
+      <h1 id="title">HANGMAN</h1>
       <h2>Bars in Austin</h2>
-      <p>Use the letters below to guess the word.</p>
+      <p id='text'>Use the letters below to guess the word.</p>
     </div>
   </div>
+  <!-- Game zone -->
   <div class="container">
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-5 pic">
         <img src="assets/images/beer.jpg">
       </div>
       <div class="col-md-7">
         <h1>Guess this bar!</h1>
         <br>
+        <!-- Holds secret word -->
         <div id="hold"></div>
-        <br>
         <h1>Guesses remaining:</h1>
-        <br>
+        <!-- Holds guesses remaining -->
         <div id="myLives" style="font-size: 24px"></div>
         <br>
         <div></div>
@@ -40,7 +44,7 @@
       </div>
     </div>
   </div>
-  
+<!-- JavaScript link -->
 <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
